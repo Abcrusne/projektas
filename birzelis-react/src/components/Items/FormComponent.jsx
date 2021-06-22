@@ -1,92 +1,101 @@
 import React from 'react';
 //import { Link } from 'react-router-dom';
+import 'react-datepicker/dist/react-datepicker.css';
+import DatePicker, { registerLocale } from 'react-datepicker';
 
 function FormComponent({
   handleSubmit,
   handleChange,
-  desc,
-  flag,
-  image,
-  title,
+  handleChangeDate,
+  id,
+  name,
+  lastname,
+  birthdate,
+  phoneNumber,
   type,
 }) {
   return (
     <form className="container my-5" onSubmit={(e) => handleSubmit(e)}>
-      <div className="form-group">
-        <label htmlFor="title">
-          <b>Title</b>
+      <div className="form-group mb-3 col-6">
+        <label htmlFor="name" className="control-label">
+          Vardas*:
         </label>
         <input
-          title="title"
           type="text"
+          placeholder="Vardas"
           className="form-control"
-          value={title}
-          onChange={(e) => handleChange(e)}
-          required
+          name="name"
+          onChange={handleChange}
+          // noValidate
         />
+
+        {/* {errors.firstname.length > 0 && (
+                  <span className="error">{errors.firstname}</span>
+                )} */}
+      </div>
+      <div className="form-group mb-3 col-6">
+        <label htmlFor="lastname" className="control-label">
+          Pavardė*:
+        </label>
+        <input
+          type="text"
+          placeholder="Pavardė"
+          className="form-control"
+          name="lastname"
+          onChange={handleChange}
+          // noValidate
+        />
+
+        {/* {errors.firstname.length > 0 && (
+                  <span className="error">{errors.firstname}</span>
+                )} */}
+      </div>
+      <div className="form-group mb-3 col-6  ">
+        <label htmlFor="birthdate" className="control-label">
+          Gimimo data*:
+        </label>
+        <div>
+          <DatePicker
+            className="form-control "
+            // dateFormat="yyyy-MM-dd"
+            locale="lt"
+            name="birthdate"
+            maxDate={new Date()}
+            selected={birthdate}
+            onChange={handleChangeDate}
+          />
+        </div>
       </div>
       <div className="form-group">
-        <label htmlFor="desc">
-          <b>Description</b>
+        <label htmlFor="phoneNumber">
+          <b>Tel.nr</b>
         </label>
         <input
-          title="desc"
+          name="phoneNumber"
+          placeholder="Numeris"
           type="text"
           className="form-control"
-          value={desc}
+          value={phoneNumber}
           onChange={(e) => handleChange(e)}
         />
       </div>
       <div className="form-group  col-6 ">
-        <label htmlFor="flag">
-          <b>Flag</b>
+        <label htmlFor="type">
+          <b>Pasirinkite kliento tipą</b>
         </label>
         <select
-          title="flag"
+          name="type"
           type="text"
           className="form-control"
-          value={flag}
-          onChange={(e) => handleChange(e)}
-        >
-          <option value=""></option>
-          <option value="Yes">YES</option>
-          <option value="No">NO</option>
-        </select>
-      </div>
-      <div className="form-group col-6">
-        <label htmlFor="image">
-          <b>Select an image</b>
-        </label>
-        <select
-          title="image"
-          className="form-control"
-          value={image}
-          onChange={(e) => handleChange(e)}
-        >
-          <option value=""></option>
-          <option value="img1">img1</option>
-          <option value="img2">img2</option>
-          <option value="img3">img3</option>
-        </select>
-      </div>
-      <div className="form-group col-6">
-        <label htmlFor="type">
-          <b>Select Type</b>
-        </label>
-        <select
           value={type}
-          className="form-control"
-          title="type"
-          id="type"
           onChange={(e) => handleChange(e)}
         >
           <option value=""></option>
-          <option value="NATIONAL">NATIONAL</option>
-          <option value="RELIGIOUS">RELIGIOUS </option>
-          <option value="MEMORY">MEMORY</option>
-          <option value="NOT_TRADITIONAL">NOT TRADITIONAL</option>
+          <option value="USUAL">Paprastas klientas</option>
+          <option value="LOYAL">Lojalus klientas</option>
         </select>
       </div>
+
       <button type="submit" className="btn btn-primary">
         Save
       </button>

@@ -9,6 +9,7 @@ import ItemsAdministrationContainer from './components/Items/ItemsAdministration
 import FormContainer from './components/Items/FormContainer';
 import NotReady from './components/NotReady/NotReadyComponent';
 import NoMatch from './components/Nomatch/NoMatch';
+import UpdateClientContainer from './components/Items/UpdateClientContainer';
 
 function App() {
   return (
@@ -17,15 +18,16 @@ function App() {
         <NavigationComponent />
         <Switch>
           <Route exact path="/" component={ItemListContainer} />
-          <Route exact path="/celebrations" component={ItemListContainer} />
+          <Route exact path="/clients" component={ItemListContainer} />
+          <Route exact path="/clients/:id" component={ItemDetailContainer} />
+          <Route exact path="/admin" component={ItemsAdministrationContainer} />
           <Route
             exact
-            path="/celebrations/:id"
-            component={ItemDetailContainer}
+            path="/admin/client/atnaujinti/:id"
+            component={UpdateClientContainer}
           />
-          <Route exact path="/admin" component={ItemsAdministrationContainer} />
           <Route exact path="/admin/new" component={FormContainer} />
-          <Route exact path="/countries" component={NotReady} />
+          <Route exact path="/inventorius" component={NotReady} />
           <Route exact path="/delete" component={NotReady} />
           <Route path="*" component={NoMatch} />
           <Route component={NoMatch} />

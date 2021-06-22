@@ -7,15 +7,15 @@ export default class ItemListContainer extends Component {
   constructor() {
     super();
     this.state = {
-      celebrations: [],
+      clients: [],
     };
   }
 
   componentDidMount() {
     axios
-      .get(`${myUrl}/api/celebrations`)
+      .get(`${myUrl}/api/clients`)
       .then((res) => {
-        this.setState({ celebrations: res.data });
+        this.setState({ clients: res.data });
       })
       .catch((err) => {
         console.log(err);
@@ -23,19 +23,14 @@ export default class ItemListContainer extends Component {
   }
 
   render() {
-    // const { data } = this.state.celebrations;
+    // const { data } = this.state.clients;
 
     // if (data) {
     return (
       <div className="container pt-4">
         <div className="row d-flex justify-content-center">
-          {this.state.celebrations.map((celebration) => {
-            return (
-              <ItemCardComponent
-                celebration={celebration}
-                key={celebration.id}
-              />
-            );
+          {this.state.clients.map((client) => {
+            return <ItemCardComponent client={client} key={client.id} />;
           })}
         </div>
       </div>

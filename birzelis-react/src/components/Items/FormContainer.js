@@ -7,17 +7,28 @@ export default class FormContainer extends Component {
   constructor() {
     super();
     this.state = {
-      desc: '',
-      flag: '',
-      image: '',
-      title: '',
+      id: '',
+      name: '',
+      lastname: '',
+      birtdate: '',
+      phoneNumber: '',
       type: '',
     };
   }
 
-  handleChange = (event) => {
+  // handleChange = (event) => {
+  //   this.setState({
+  //     [event.target.name]: event.target.value,
+  //   });
+  // };
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+  
+  handleChangeDate = (date) => {
     this.setState({
-      [event.target.title]: event.target.value,
+      birthdate: date,
     });
   };
 
@@ -25,7 +36,7 @@ export default class FormContainer extends Component {
     event.preventDefault();
     console.log(this.state);
     axios
-      .post(`${myUrl}/api/celebrations`, this.state)
+      .post(`${myUrl}/api/clients`, this.state)
       .then((response) => {
         this.props.history.push('/admin');
       })
@@ -36,14 +47,16 @@ export default class FormContainer extends Component {
 
   render() {
     return (
-      <main classtitle="container pt-5">
+      <main className="container pt-5">
         <FormComponent
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          desc={this.state.desc}
-          flag={this.state.flag}
-          image={this.state.image}
-          title={this.state.title}
+          handleChangeDate={this.handleChangeDate}
+          id={this.state.id}
+          name={this.state.name}
+          lastname={this.state.lastname}
+          birthdate={this.state.birthdate}
+          phoneNumber={this.state.phoneNumber}
           type={this.state.type}
         />
       </main>

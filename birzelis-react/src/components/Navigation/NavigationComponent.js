@@ -9,17 +9,17 @@ function NavigationComponent(props) {
           <ul className="nav navbar-nav mr-auto">
             <li className="nav-item active">
               <Link to="/" className="nav-link">
-                Home
+                Pradžia
               </Link>
             </li>
             <li className="nav-item active">
               <Link to="/admin" className="nav-link">
-                Admin
+                Pridėti klientą/ Klientų sąrašas
               </Link>
             </li>
             <li className="nav-item active">
-              <Link to="/countries" className="nav-link">
-                Countries
+              <Link to="/inventorius" className="nav-link">
+                Inventorius
               </Link>
             </li>
           </ul>

@@ -8,15 +8,15 @@ export default class ItemsAdministrationContainer extends Component {
   constructor() {
     super();
     this.state = {
-      celebrations: [],
+      clients: [],
     };
   }
 
   componentDidMount() {
     axios
-      .get(`${myUrl}/api/celebrations`)
+      .get(`${myUrl}/api/clients`)
       .then((response) => {
-        this.setState({ celebrations: response.data });
+        this.setState({ clients: response.data });
         //console.log(this.state);
       })
       .catch((error) => {
@@ -26,11 +26,11 @@ export default class ItemsAdministrationContainer extends Component {
   deleteItem = (e) => {
     e.preventDefault();
     axios
-      .delete(`${myUrl}/api/greetings/${e.target.value}`)
+      .delete(`${myUrl}/api/clients/${e.target.value}`)
       .then(() => {
         axios
-          .get(`${myUrl}/api/greetings/`)
-          .then((res) => this.setState({ greetings: res.data }));
+          .get(`${myUrl}/api/clients/`)
+          .then((res) => this.setState({ clients: res.data }));
       })
       .catch((err) => console.log(err));
   };
@@ -40,7 +40,7 @@ export default class ItemsAdministrationContainer extends Component {
       <main className="container pt-3">
         <div className="row pb-3">
           <Link to={`/admin/new`} className="btn btn-primary">
-            Add new item
+            Pridėti klientą
           </Link>
         </div>
         <div className="row">
@@ -48,17 +48,20 @@ export default class ItemsAdministrationContainer extends Component {
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Image</th>
-                <th scope="col">Title</th>
+                <th scope="col">Vardas</th>
+                <th scope="col">Pavardė</th>
+                <th scope="col">Gimimo data</th>
+                <th scope="col">tel.nr</th>
+                <th scope="col">Atnaujinti duomenis</th>
                 <th scope="col"> </th>
               </tr>
             </thead>
             <tbody>
-              {this.state.celebrations.map((celebration) => {
+              {this.state.clients.map((client) => {
                 return (
                   <ItemsAdministrationComponent
-                    celebration={celebration}
-                    key={celebration.id}
+                    client={client}
+                    key={client.id}
                     deleteItem={this.deleteItem}
                   />
                 );

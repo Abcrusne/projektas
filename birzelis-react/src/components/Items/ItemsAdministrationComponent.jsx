@@ -1,37 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import { Link } from 'react-router-dom';
-import img1 from '../../img/img1.jpg';
-import img2 from '../../img/img2.jpg';
-import img3 from '../../img/img3.jpg';
 import ModalComponent from '../Modal/ModalComponent';
 
-const ItemsAdministrationComponent = ({ celebration, deleteItem }) => {
-  const imgSrc =
-    celebration.image === 'img1'
-      ? img1
-      : celebration.image === 'img2'
-      ? img2
-      : img3;
+const ItemsAdministrationComponent = ({ client, deleteItem }) => {
   return (
     <tr>
-      <th scope="row">{celebration.id}</th>
+      <th scope="row">{client.id}</th>
+      <td>{client.name}</td>
       <td>
-        {' '}
-        <img
-          src={imgSrc}
-          //src={celebration.image}
-          className="card-img-top"
-          style={{ width: 50, height: 50 }}
-          alt={celebration.title}
-        />
+        <Link to={`/clients/${client.id}`}>{client.lastname} </Link>
       </td>
-      <td>
-        <Link to={`/celebrations/${celebration.id}`}>{celebration.title} </Link>
-      </td>
+      <td>{client.birthdate}</td>
+      <td>{client.phoneNumber}</td>
+      <td> <Link
+        className="text-decoration-none mr-3"
+        to={`/admin/client/atnaujinti/${client.id}`}>
+          Atnaujinti 
+      </Link ></td>
       <td>
         {/* <button className="btn btn-danger" 
-        // onClick={deleteItem(celebration.id)}
+        // onClick={deleteItem(client.id)}
         >
           Delete item
         </button> */}
@@ -41,15 +29,15 @@ const ItemsAdministrationComponent = ({ celebration, deleteItem }) => {
         <button
           className=" btn btn-light"
           data-toggle="modal"
-          data-target={`#staticBackdrop${celebration.id}`}
-          value={celebration.id}
+          data-target={`#staticBackdrop${client.id}`}
+          value={client.id}
         >
           Ištrinti
         </button>
       </td>
       <td>
         <ModalComponent
-          id={celebration.id}
+          id={client.id}
           // email={email}
           deleteItem={deleteItem}
         />

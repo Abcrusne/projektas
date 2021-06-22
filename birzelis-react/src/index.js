@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 
 document.title = 'Baigiamasis';
+document.body.style.backgroundColor = '#E5F5FB';
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -7,15 +7,15 @@ export default class ItemDetailContainer extends Component {
   constructor() {
     super();
     this.state = {
-      celebration: {},
+      clients: {},
     };
   }
 
   componentDidMount() {
     axios
-      .get(`${myUrl}/api/celebrations/${this.props.match.params.id}`)
+      .get(`${myUrl}/api/clients/${this.props.match.params.id}`)
       .then((res) => {
-        this.setState({ celebration: res.data });
+        this.setState({ clients: res.data });
         console.log(res.data);
       })
       .catch((err) => {
@@ -27,7 +27,7 @@ export default class ItemDetailContainer extends Component {
     return (
       <main className="container">
         <div className="row">
-          <ItemDetailComponent celebration={this.state.celebration} />
+          <ItemDetailComponent client={this.state.clients} />
         </div>
       </main>
     );
