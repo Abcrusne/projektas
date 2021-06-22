@@ -8,6 +8,7 @@ import javax.persistence.TemporalType;
 public class InventoryFromService {
 
 	private Long id;
+	private String title;
 	private double weight;
 	private int sector;
 	@Temporal(TemporalType.TIMESTAMP)
@@ -18,16 +19,18 @@ public class InventoryFromService {
 
 	}
 
-	public InventoryFromService(double weight, int sector, Date date) {
+	public InventoryFromService(String title, double weight, int sector, Date date) {
 		super();
+		this.title = title;
 		this.weight = weight;
 		this.sector = sector;
 		this.date = date;
 	}
 
-	public InventoryFromService(Long id, double weight, int sector, Date date) {
+	public InventoryFromService(Long id, String title, double weight, int sector, Date date) {
 		super();
 		this.id = id;
+		this.title = title;
 		this.weight = weight;
 		this.sector = sector;
 		this.date = date;
@@ -63,6 +66,14 @@ public class InventoryFromService {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }

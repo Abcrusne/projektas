@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
 
 import lt2021.birzelis.clientInventory.ClientInventory;
 
@@ -26,13 +27,16 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@NotNull
 	private String name;
+	@NotNull
 	private String lastname;
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date birthdate;
-
+	@NotNull
 	private String phoneNumber;
-
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private ClientType type;
 

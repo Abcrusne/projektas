@@ -7,6 +7,7 @@ import javax.persistence.TemporalType;
 
 public class CreateInventoryCommand {
 
+	private String title;
 	private double weight;
 	private int sector;
 	@Temporal(TemporalType.TIMESTAMP)
@@ -17,7 +18,7 @@ public class CreateInventoryCommand {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CreateInventoryCommand(double weight, int sector, Date date) {
+	public CreateInventoryCommand(String title, double weight, int sector, Date date) {
 		super();
 		this.weight = weight;
 		this.sector = sector;
@@ -46,6 +47,14 @@ public class CreateInventoryCommand {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }

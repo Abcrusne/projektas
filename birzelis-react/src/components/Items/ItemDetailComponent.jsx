@@ -5,6 +5,7 @@ const ItemDetailComponent = ({ client }) => {
   return (
     <div>
       <div className="media">
+        <h3> Plačiau</h3>
         <div className="media-body mt-3">
           <h2>Vardas: {client.name}</h2>
           <p>Pavardė: {client.lastname}</p>

@@ -13,6 +13,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import lt2021.birzelis.clientInventory.ClientInventory;
 
@@ -23,9 +26,19 @@ public class Inventory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
+	@NotNull
+	private String title;
+
+	@NotNull
 	private double weight;
+
+	@Min(value = 1)
+	@Max(value = 40)
 	private int sector;
+
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	private Date date;
 
 	@OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)
@@ -35,9 +48,10 @@ public class Inventory {
 		super();
 	}
 
-	public Inventory(Long id, double weight, int sector, Date date) {
+	public Inventory(Long id, String title, double weight, int sector, Date date) {
 		super();
 		this.id = id;
+		this.title = title;
 		this.weight = weight;
 		this.sector = sector;
 		this.date = date;
@@ -78,6 +92,14 @@ public class Inventory {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public void setClientInventory(Set<ClientInventory> clientInventory) {

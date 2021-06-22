@@ -10,6 +10,8 @@ import FormContainer from './components/Items/FormContainer';
 import NotReady from './components/NotReady/NotReadyComponent';
 import NoMatch from './components/Nomatch/NoMatch';
 import UpdateClientContainer from './components/Items/UpdateClientContainer';
+import InventorListContainer from './inventor/InventorListContainer';
+import InventorFormContainer from './inventor/InventorFormContainer';
 
 function App() {
   return (
@@ -27,7 +29,17 @@ function App() {
             component={UpdateClientContainer}
           />
           <Route exact path="/admin/new" component={FormContainer} />
-          <Route exact path="/inventorius" component={NotReady} />
+          <Route exact path="/inventorius" component={InventorListContainer} />
+          <Route
+            exact
+            path="/admin/client/prideti/inventoriu/:id"
+            component={InventorFormContainer}
+          />
+          <Route
+            exact
+            path="/admin/client/prideti/inventoriu/"
+            component={InventorFormContainer}
+          />
           <Route exact path="/delete" component={NotReady} />
           <Route path="*" component={NoMatch} />
           <Route component={NoMatch} />

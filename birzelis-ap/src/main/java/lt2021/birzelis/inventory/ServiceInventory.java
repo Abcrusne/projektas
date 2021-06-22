@@ -16,19 +16,19 @@ public class ServiceInventory {
 	@Transactional(readOnly = true)
 	public List<InventoryFromService> getInventories() {
 		return dao.findAll().stream()
-				.map(i -> new InventoryFromService(i.getId(), i.getWeight(), i.getSector(), i.getDate()))
+				.map(i -> new InventoryFromService(i.getId(), i.getTitle(), i.getWeight(), i.getSector(), i.getDate()))
 				.collect(Collectors.toList());
 	}
 
 	@Transactional(readOnly = true)
 	public InventoryFromService getInventory(Long id) {
 		var i = dao.findById(id).orElse(null);
-		return new InventoryFromService(i.getId(), i.getWeight(), i.getSector(), i.getDate());
+		return new InventoryFromService(i.getId(), i.getTitle(), i.getWeight(), i.getSector(), i.getDate());
 	}
 
 	@Transactional
 	public void addInventory(InventoryFromService i) {
-		dao.save(new Inventory(i.getId(), i.getWeight(), i.getSector(), i.getDate()));
+		dao.save(new Inventory(i.getId(), i.getTitle(), i.getWeight(), i.getSector(), i.getDate()));
 	}
 
 	@Transactional

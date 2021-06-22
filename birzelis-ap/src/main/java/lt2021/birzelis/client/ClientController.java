@@ -44,4 +44,9 @@ public class ClientController {
 		service.updateClient(new ClientFromService(clientId, cmd.getName(), cmd.getLastname(), cmd.getBirthdate(),
 				cmd.getPhoneNumber(), cmd.getType()));
 	}
+//	@RequestMapping(path = "/{clientId}/inventories", method = RequestMethod.GET)
+//	public ClientFromService getSingleClientInventory(@PathVariable final Long clientId) {
+//		return service.getClient(clientId);
+//	}
+
 }

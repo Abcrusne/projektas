@@ -16,16 +16,11 @@ export default class FormContainer extends Component {
     };
   }
 
-  // handleChange = (event) => {
-  //   this.setState({
-  //     [event.target.name]: event.target.value,
-  //   });
-  // };
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
-  
+
   handleChangeDate = (date) => {
     this.setState({
       birthdate: date,

@@ -23,7 +23,8 @@ public class InventoryController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public List<InventoryFromService> addInventory(@RequestBody final CreateInventoryCommand cmd) {
-		service.addInventory((new InventoryFromService(cmd.getWeight(), cmd.getSector(), cmd.getDate())));
+		service.addInventory(
+				(new InventoryFromService(cmd.getTitle(), cmd.getWeight(), cmd.getSector(), cmd.getDate())));
 		return service.getInventories();
 	}
 
@@ -39,6 +40,7 @@ public class InventoryController {
 
 	@RequestMapping(path = "/{inventoryId}", method = RequestMethod.PUT)
 	public void updateInventory(@PathVariable final Long inventoryId, @RequestBody final CreateInventoryCommand cmd) {
-		service.updateInventory(new InventoryFromService(inventoryId, cmd.getWeight(), cmd.getSector(), cmd.getDate()));
+		service.updateInventory(
+				new InventoryFromService(inventoryId, cmd.getTitle(), cmd.getWeight(), cmd.getSector(), cmd.getDate()));
 	}
 }

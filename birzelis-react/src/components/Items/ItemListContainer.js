@@ -29,6 +29,7 @@ export default class ItemListContainer extends Component {
     return (
       <div className="container pt-4">
         <div className="row d-flex justify-content-center">
+          <h3> Sąrašas</h3>
           {this.state.clients.map((client) => {
             return <ItemCardComponent client={client} key={client.id} />;
           })}

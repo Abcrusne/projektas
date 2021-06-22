@@ -12,11 +12,24 @@ const ItemsAdministrationComponent = ({ client, deleteItem }) => {
       </td>
       <td>{client.birthdate}</td>
       <td>{client.phoneNumber}</td>
-      <td> <Link
-        className="text-decoration-none mr-3"
-        to={`/admin/client/atnaujinti/${client.id}`}>
-          Atnaujinti 
-      </Link ></td>
+      <td>
+        {' '}
+        <Link
+          className="text-decoration-none mr-3"
+          to={`/admin/client/prideti/inventoriu/${client.id}`}
+        >
+          Pridėti inventorių {client.lastname}
+        </Link>
+      </td>
+      <td>
+        {' '}
+        <Link
+          className="text-decoration-none mr-3"
+          to={`/admin/client/atnaujinti/${client.id}`}
+        >
+          Atnaujinti
+        </Link>
+      </td>
       <td>
         {/* <button className="btn btn-danger" 
         // onClick={deleteItem(client.id)}
@@ -42,6 +55,7 @@ const ItemsAdministrationComponent = ({ client, deleteItem }) => {
           deleteItem={deleteItem}
         />
       </td>
+   
     </tr>
   );
 };

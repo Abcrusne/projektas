@@ -2,6 +2,9 @@ import React from 'react';
 //import { Link } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker, { registerLocale } from 'react-datepicker';
+import lt from 'date-fns/locale/lt';
+
+registerLocale('lt', lt);
 
 function FormComponent({
   handleSubmit,
@@ -16,6 +19,7 @@ function FormComponent({
 }) {
   return (
     <form className="container my-5" onSubmit={(e) => handleSubmit(e)}>
+      <h3> Pridėti klientą</h3>
       <div className="form-group mb-3 col-6">
         <label htmlFor="name" className="control-label">
           Vardas*:
