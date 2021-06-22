@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/birzelis-ap/static/js/main.51399586.chunk.js",
-    "main.js.map": "/birzelis-ap/static/js/main.51399586.chunk.js.map",
+    "main.js": "/birzelis-ap/static/js/main.f09d126a.chunk.js",
+    "main.js.map": "/birzelis-ap/static/js/main.f09d126a.chunk.js.map",
     "runtime-main.js": "/birzelis-ap/static/js/runtime-main.b6786b86.js",
     "runtime-main.js.map": "/birzelis-ap/static/js/runtime-main.b6786b86.js.map",
     "static/css/2.30f2e618.chunk.css": "/birzelis-ap/static/css/2.30f2e618.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/3.4a3936f5.chunk.js": "/birzelis-ap/static/js/3.4a3936f5.chunk.js",
     "static/js/3.4a3936f5.chunk.js.map": "/birzelis-ap/static/js/3.4a3936f5.chunk.js.map",
     "index.html": "/birzelis-ap/index.html",
-    "precache-manifest.8f6af5e37b596ad3cef00b6043290512.js": "/birzelis-ap/precache-manifest.8f6af5e37b596ad3cef00b6043290512.js",
+    "precache-manifest.a3795bc8a7a835b0503806ce1fffff21.js": "/birzelis-ap/precache-manifest.a3795bc8a7a835b0503806ce1fffff21.js",
     "service-worker.js": "/birzelis-ap/service-worker.js",
     "static/css/2.30f2e618.chunk.css.map": "/birzelis-ap/static/css/2.30f2e618.chunk.css.map",
     "static/js/2.f725c9d4.chunk.js.LICENSE.txt": "/birzelis-ap/static/js/2.f725c9d4.chunk.js.LICENSE.txt"
@@ -19,6 +19,6 @@
     "static/js/runtime-main.b6786b86.js",
     "static/css/2.30f2e618.chunk.css",
     "static/js/2.f725c9d4.chunk.js",
-    "static/js/main.51399586.chunk.js"
+    "static/js/main.f09d126a.chunk.js"
   ]
 }

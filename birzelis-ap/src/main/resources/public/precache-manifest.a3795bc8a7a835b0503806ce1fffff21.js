@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a719e215cdd3223fcdc790a2aa6e472b",
+    "revision": "52df6c7f89709c8ca73e95b6a9298a8c",
     "url": "/birzelis-ap/index.html"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/birzelis-ap/static/js/3.4a3936f5.chunk.js"
   },
   {
-    "revision": "338e35a6fb7535313409",
-    "url": "/birzelis-ap/static/js/main.51399586.chunk.js"
+    "revision": "8e3dcc56e2007ae962c6",
+    "url": "/birzelis-ap/static/js/main.f09d126a.chunk.js"
   },
   {
     "revision": "1e9dfa7e4ae4359cc40c",

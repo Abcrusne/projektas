@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/birzelis-ap/precache-manifest.8f6af5e37b596ad3cef00b6043290512.js"
+  "/birzelis-ap/precache-manifest.a3795bc8a7a835b0503806ce1fffff21.js"
 );
 
 self.addEventListener('message', (event) => {

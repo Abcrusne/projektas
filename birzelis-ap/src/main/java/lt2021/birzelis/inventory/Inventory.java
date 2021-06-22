@@ -33,8 +33,8 @@ public class Inventory {
 	@NotNull
 	private double weight;
 
-	@Min(value = 1)
-	@Max(value = 40)
+	@Min(1)
+	@Max(40)
 	private int sector;
 
 	@Temporal(TemporalType.TIMESTAMP)
